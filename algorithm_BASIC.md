@@ -209,3 +209,61 @@ public static Void main(String[] args] {
 	System.out.println("size: " + dynamicArray.size);
 	System.out.println("capacity: " + dynamicArray.capacity);		
 }
+
+## linkedList, ArrayList
+ArrayList is faster a little bit.   // when i use get()
+### Because LinkedList is doubly linked
+ArrayList is slower when i use remove(0);
+### Because we need to shift elements after remove
+#### but when the number becomes bigger LinkekdList becomes Slower
+
+## Big O notation
+"how code slows as data grows"   
+### performance of an algorithm as the amount of data increases
+machine independent, igonre smaller operations
+
+### O(n) : takes the same steps with volume of num
+### O(1) : the input size doesn't matter take only same steps
+![image](https://github.com/user-attachments/assets/df0379d0-4fe5-471a-936d-8cf2b6defe72)
+
+## Linear Search
+### Iterate through a collection one element at a time    
+### run time complexity : 0    
+### disadvantages: slow for large data     
+### adv: fast for searches of small to medium / does not need to sorted/ useful for data structures that do not have random access
+public class Main {
+
+	public static void main(String[] ags){
+		
+		int[] array = {9,2,3,5,1,7,3,5};
+		
+		int index = linearSearch(array,4);
+		
+		if(index != -1) {
+			System.out.println("Element found at index: " + index);
+		}else {
+			System.out.println("Element not found");
+		}
+		
+	}
+
+	private static int linearSearch(int[] array, int value) {
+		
+		for(int i = 0; i < array.length; i++) {
+			if(array[i] == value) {
+				return i;
+			}
+		}
+		return -1;
+	}
+}
+
+
+
+
+
+
+
+
+
+
