@@ -462,7 +462,33 @@ public class Main {
 	}
 	
  }
+## Recursion
+public class Main {
+	//Recursion : when a thing is defined in terms of itself
+			// apply the result of procedure to a procedure
+			// recursive method calls itself, can be a substitute for iteration
+			// divide a problem into sub problems of the same type as the original
+			// commonly used with advanced sorting algorithms and navigating trees
+			
+			// advantage: easier to read/ debug
+			// disadvantage : sometimes slower/use more memory
 
+	public static void main(String[] ags){
+				
+		System.out.println(power(2,4));
+		
+		
+	
+	}
+
+	private static int power(int base, int exponent) {
+	
+		if(exponent <1) return 1; //base case
+		return base * power(base, exponent -1); //recursive case
+		
+	}
+		
+ }
 
 
 
