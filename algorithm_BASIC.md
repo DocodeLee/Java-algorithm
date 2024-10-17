@@ -356,9 +356,112 @@ public class Main {
 		return -1;
 	}
 }
+## Bubble sort
+public class Main {
 
+	public static void main(String[] ags){
+	
+		// Bubble sort : used when sort, compare between two and use temp store to temporary
+		// ineffective because compare one by one until the end
+		// O(n^2)
+		
+		int array[] = {9,1,2,3,8,7,5,4,6};
+		
+		bubbleSort(array);
+		
+		for(int i : array) {
+			System.out.print(i);
+		}
+	
+	}
 
+	private static void bubbleSort(int array[]) {
+		
+		for(int i = 0; i < array.length -1; i++) {
+			for(int j = 0; j < array.length -1; j++) {
+			
+				if(array[j]> array[j+1]) {
+					int temp = array[j];
+					array[j] = array[j+1];
+					array[j+1] = temp;
+				}
+			}
+		}
+		
+	}
+	
+ }
+ ## Selection sort
+ public class Main {
 
+	public static void main(String[] ags){
+	
+		//Selection sort : search through an array and keep track of the minimum value during iteration
+		// at the end. we swap variables
+		//O(n^2)
+		
+		int array[] = {8,7,9,2,1,3,5,4,6};
+	
+		selectionSor(array);
+		
+		for(int i : array) {
+			System.out.print(i);
+		}
+		
+	}
+
+	private static void selectionSor(int[] array) {
+		for(int i = 0; i<array.length -1; i++) {
+			int min = i;
+			
+			for(int j = i+1; j < array.length -1; j++) {
+				if(array[min] > array[j]) {
+					min = j;
+				}
+			}
+			int temp = array[i];
+			array[i] = array[min];
+			array[min] = temp;
+		}
+		
+	}
+	
+ }
+
+## Insertion sort
+public class Main {
+
+	public static void main(String[] ags){
+		
+		//insertion sort : after comparing elements to left shift elements to right
+		// O(n^2)
+		// less steps than bubble , best case is O(n)
+	
+		int array[] = {9,1,8,2,7,3,6,5,4};
+		
+		insertionSrot(array);
+		
+		for(int i : array) {
+			System.out.print(i + " ");
+		}
+	}
+
+	private static void insertionSrot(int[] array) {
+		
+		for(int i = 1; i < array.length; i++) {
+			int temp = array[i];
+			int j = i-1;
+			
+			while(j >= 0 && array[j] > temp) {
+				array[j + 1] = array[j];
+				j--;
+			}
+			array[ j + 1] =temp;
+		}
+		
+	}
+	
+ }
 
 
 
