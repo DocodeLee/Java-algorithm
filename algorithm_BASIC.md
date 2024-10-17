@@ -257,8 +257,105 @@ public class Main {
 		return -1;
 	}
 }
+## Binary Search
+### search algorithm that finds the position of a target value within a sorted array. Half of the array is eliminated during each step
+### O(log N) type
 
+value = "H";    
+index = ?'     
 
+public class Main {
+
+	public static void main(String[] ags){
+		int array[] = new int[1000000];
+		int target = 42333;
+		
+		for(int i = 0; i < array.length; i++) {
+			array[i] = i;
+		}
+		// int index = Arrays.binarySearch(array, target);
+		int index = binarySearch(array, target);
+		
+		if(index == -1) {
+			System.out.println(target + " not found");
+		}
+		else {
+			System.out.println("Element found at " + index);
+		}
+	}
+
+	private static int binarySearch(int[] array, int target) {
+		// TODO Auto-generated method stub
+		int low = 0;
+		int high = array.length -1;
+		
+		while(low <= high) {
+			int middle = low + (high - low) /2;
+			int value = array[middle];
+			
+			System.out.println("middle: " + value);
+			
+			if(value < target) {
+				low = middle + 1;
+			}
+			else if(value > target){
+				high = middle -1;
+			}else {
+				return middle; // target found
+			}
+		}
+		
+		return -1;
+	}
+}
+
+## Interpolation search
+public class Main {
+
+	public static void main(String[] ags){
+		
+		// interpolation search: improvement over binary search best used for uniformally distributed data
+		// "Guesses" where a value might be based on calculated probe results
+		// if probe is incorrect, search area is narrowed and a new probe is calculated
+		
+		// average case : O(log(log(n))) / worst : O(n)
+		
+		
+		int[] array = {1,2,5,16,32,64,128,256,512};
+		
+		int index = interpolationSearch(array, 256);
+		
+		if(index != -1) {
+			System.out.println("Element found at index: " + index);
+		}else {
+			System.out.println("Element not found");
+		}
+	}
+
+	private static int interpolationSearch(int[] array, int value) {
+		
+		int high = array.length -1;
+		int low = 0;
+		
+		while(value >= array[low] && value <= array[high] && low <= high) {
+			int probe = low + (high - low) * (value - array[low]) / 
+					(array[high] - array[low]);
+			
+			System.out.println("Probe : " + probe);
+			
+			if(array[probe] == value) {
+				return probe;
+			}
+			else if(array[probe] < value) {
+				low = probe +1;
+			}else {
+				high = probe -1;
+			}
+		}
+		
+		return -1;
+	}
+}
 
 
 
