@@ -952,3 +952,12 @@ public class Main {
 	}
 		
  }
+## tree data structure intro
+
+tree : a non linear data structure where nodes are organized in a hierarchy   
+ROOT > branch leaf   
+parent > child    
+
+Size : number of nodes    
+Depth : number of edge below on the root node
+height : number of dege above furthest leaf node
