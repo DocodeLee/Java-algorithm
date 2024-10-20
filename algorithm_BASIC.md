@@ -1090,3 +1090,11 @@ public class Main {
 		return root.data;
 	}
 }
+## tree triversal
+in order triversal : left > root > right    
+post ordre triversal : left > RIGHT > root
+pre order : root > left > right 
+
+## calculate execution time
+long start = System.nanoTIme();   
+long duration = (System.nanoTime()- start)/1000000;
